@@ -32,7 +32,7 @@ BEGIN;
     SORTKEY (domain_userid)
   AS (SELECT * FROM derived.id_map);
 
-  DELETE FROM derived.id_map;
+  TRUNCATE derived.id_map;
 
   INSERT INTO snplw_temp.queries (SELECT 'id-stitching', 'backup', GETDATE()); -- (f) track time
 
